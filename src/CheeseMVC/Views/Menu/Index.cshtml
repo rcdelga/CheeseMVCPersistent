@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CheeseMVC.Models.Menu>
+@{ViewBag.Title = "Menus";}
+<h1>Menus</h1>
+
+
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a asp-controller="Menu"
+               asp-action="ViewMenu"
+               asp-route-id="@item.ID">@item.Name</a>
+        </li>
+    }
+</ul>
+
+<a asp-controller="Menu" asp-action="Add">Add Menu</a>
